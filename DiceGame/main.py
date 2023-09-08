@@ -14,7 +14,7 @@ class Die:
         new_value = random.randint(1,6)
         self._value = new_value
         return new_value
-
+    
 class Player:
     def __init__(self, die, is_computer=False):
         self._die = die

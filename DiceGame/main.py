@@ -14,7 +14,7 @@ class Die:
         new_value = random.randint(1,6)
         self._value = new_value
         return new_value
-
+    
 class Player:
     def __init__(self, die, is_computer=False):
         self._die = die
@@ -60,7 +60,7 @@ class DiceGame:
         loser.increment_counter()
 
     def show_counter(self):
-         print(f"Player1 Counter : {self._player.counter}\nPlayer2(Computer) Counter : {self._computer.counter}")
+         print(f"\nPlayer1 Counter : {self._player.counter}\nPlayer2(Computer) Counter : {self._computer.counter}\n")
     
     def play_round(self):
         self.welcome_round()
@@ -70,13 +70,13 @@ class DiceGame:
         self.show_dice(player_value, computer_value)
         #Determine the Winner or Looser
         if player_value > computer_value:
-            print("Player1 Wins the Round")
+            print("\nPlayer1 Wins the Round")
             self.update_counter(winner=self._player, loser=self._computer)
         elif computer_value > player_value:
-            print("Player2(Computer Wins the round)")
+            print("\nPlayer2(Computer Wins the round)")
             self.update_counter(winner=self._computer, loser=self._player)
         else:
-            print("It's a tie")
+            print("\nIt's a tie")
         
         self.show_counter()
 

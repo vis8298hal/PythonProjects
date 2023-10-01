@@ -111,8 +111,6 @@ class DiceGame:
             if game_over:
                 break
     
-    
-
 player_die = Die()
 computer_die = Die()
 player1 = Player(player_die, is_computer=False)

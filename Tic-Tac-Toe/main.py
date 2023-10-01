@@ -11,6 +11,9 @@ logfile.write(f"Logfile Initiated for {tday.strftime('%d-%B-%Y')}")
 logfile.write(f"\nProgram Id : {id(tday)}")
 logfile.close() 
     
-p1 = Player(is_human=False)
+p1 = Player(is_human=True)
 p1_move = p1.get_move()
 print(p1_move.value)
+print(p1_move.get_row())
+print(p1_move.get_column())
+

@@ -7,46 +7,65 @@ class Move:
     def value(self):
         return self._value
     def is_valid(self):
+        file1 = open("logfile.txt","a")
+        file1.write("\n-----------------------Move Class Checking Validation-----------------------------------------------")
+        file1.close()
         Error_string = ""
         if isinstance(self._value,int):
             if self._value >= 1 and self._value <= 9:
-                Error_string = ""
+                Error_string = "\nSuccess"
             else:
-                Error_string = f"\n{datetime.datetime.now()} --> Value Provided is Out of Range Error should be between (1-9)"
+                Error_string = f"\nError : {datetime.datetime.now()} --> Value Provided is Out of Range Error should be between (1-9)"
         else:
-            Error_string += f"\n{datetime.datetime.now()} --> Value Provided is Invalid Expecting Integer"
+            Error_string += f"\nError : {datetime.datetime.now()} --> Value Provided is Invalid Expecting Integer"
        
         file1 = open("logfile.txt","a")
         file1.write(Error_string)
         file1.close()
-        if Error_string == "":
+        if Error_string == "\nSuccess":
             return 1
         else:
             return 'E'
     def get_row(self):
+        file1 = open("logfile.txt","a")
+        msg = ""
+        ret = None
+        file1.write("\n-----------------------Move Class Checking Row-----------------------------------------------")
         if self._value in (1,2,3):
-            return 0       #  First Row
+            ret = 0       #  First Row
+            msg = "\nSuccess 1st Row"
         elif self._value in (4,5,6):
-            return 1      #  Second Row
+            ret = 1      #  Second Row\
+            msg = "\nSuccess 2nd Row"
         elif self._value in (7,8,9):
-            return 2     #  Third Row
+            ret =  2     #  Third Row
+            msg = "\nSuccess 3rd Row"
         else:
-            file1 = open("logfile.txt","a")
-            file1.write(f"\n{datetime.datetime.now()} --> No Rows Found")
-            file1.close()
-            return 'E'
+            msg = f"\nError : {datetime.datetime.now()} --> No Rows Found"
+            ret =  'E'
+        file1.write(msg)
+        file1.close()
+        return ret
         
 
     def get_column(self):
-        
+        file1 = open("logfile.txt","a")
+        msg = ""
+        ret = None
+        file1.write("\n-----------------------Move Class Checking Column-----------------------------------------------")
         if self._value in (1,4,7):
-            return 0   #  First Column
+            ret = 0
+            msg = "\nSuccess 1st Column"   #  First Column
         elif self._value in (2,5,8):
-            return 1   #  Second Column
+            ret = 1
+            msg = "\nSuccess 2nd Column"   #  Second Column
         elif self._value in (3,6,9):
-            return 2   #  Third Column
+            ret = 2
+            msg = "\nSuccess 3rd Column"   #  Third Column
         else:
-            file1 = open("logfile.txt","a")
-            file1.write(f"\n{datetime.datetime.now()} --> No Columns Found")
-            file1.close()
-            return 'E'
+            ret = 'E'
+            msg = f"\nError : {datetime.datetime.now()} --> No Columns Found"
+        file1.write(msg)
+        file1.close()
+        return ret
+            

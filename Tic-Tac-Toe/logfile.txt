@@ -1,0 +1,112 @@
+**********Game Started ***************
+Date and Time : 03-Oct-2023 05:33
+Program Id  : 2884635014240
+	---------------Initialized Board Class------------------Initial Board : 
+		| 0 | 0 | 0 |
+		| 0 | 0 | 0 |
+		| 0 | 0 | 0 |
+
+	-----Player Class Initiated-----------
+			Human Player Selected
+	Human Selected Move 1
+----Move Class Intialized---
+	----Move Class Checking Validation---
+		Success
+	----Move Class Checking ROW---
+		Success 1st Row
+	----Move Class Checking Column---
+		Success 1st Column
+		 Not a Tie still Running
+	----Move Class Checking ROW---
+		Success 1st Row
+Checking Row Level Game Over
+		 Not Over yet
+	----Move Class Checking Column---
+		Success 1st Column
+Checking Column Level Game Over
+		 Not Over yet
+Checking Diagonal Level Game Over
+		 Not Over yet
+Checking Cross Diagonal Level Game Over
+		 Not Over yet
+	-----Player Class Initiated-----------
+			Computer Player Selected
+			Computer Move Selected 5
+----Move Class Intialized---
+	----Move Class Checking ROW---
+		Success 2nd Row
+	----Move Class Checking Column---
+		Success 2nd Column
+	----Move Class Checking ROW---
+		Success 2nd Row
+Checking Row Level Game Over
+		 Not Over yet
+	----Move Class Checking Column---
+		Success 2nd Column
+Checking Column Level Game Over
+		 Not Over yet
+Checking Diagonal Level Game Over
+		 Not Over yet
+Checking Cross Diagonal Level Game Over
+		 Not Over yet
+	-----Player Class Initiated-----------
+			Human Player Selected
+	Human Selected Move 2
+----Move Class Intialized---
+	----Move Class Checking Validation---
+		Success
+	----Move Class Checking ROW---
+		Success 1st Row
+	----Move Class Checking Column---
+		Success 2nd Column
+		 Not a Tie still Running
+	----Move Class Checking ROW---
+		Success 1st Row
+Checking Row Level Game Over
+		 Not Over yet
+	----Move Class Checking Column---
+		Success 2nd Column
+Checking Column Level Game Over
+		 Not Over yet
+Checking Diagonal Level Game Over
+		 Not Over yet
+Checking Cross Diagonal Level Game Over
+		 Not Over yet
+	-----Player Class Initiated-----------
+			Computer Player Selected
+			Computer Move Selected 6
+----Move Class Intialized---
+	----Move Class Checking ROW---
+		Success 2nd Row
+	----Move Class Checking Column---
+		Success 3rd Column
+	----Move Class Checking ROW---
+		Success 2nd Row
+Checking Row Level Game Over
+		 Not Over yet
+	----Move Class Checking Column---
+		Success 3rd Column
+Checking Column Level Game Over
+		 Not Over yet
+Checking Diagonal Level Game Over
+		 Not Over yet
+Checking Cross Diagonal Level Game Over
+		 Not Over yet
+	-----Player Class Initiated-----------
+			Human Player Selected
+	Human Selected Move 3
+----Move Class Intialized---
+	----Move Class Checking Validation---
+		Success
+	----Move Class Checking ROW---
+		Success 1st Row
+	----Move Class Checking Column---
+		Success 3rd Column
+		 Not a Tie still Running
+	----Move Class Checking ROW---
+		Success 1st Row
+Checking Row Level Game Over
+		 Game Over by Row
+
+
+Program Completed in 0:00:05.999002 

@@ -4,9 +4,15 @@ class Board:
     
     
     def __init__(self):
+        logfile = open("logfile.txt","a")
+        logfile.write("\n\t---------------Initialized Board Class------------------")
         self._game_board = [[0,0,0],
                             [0,0,0],
                             [0,0,0]]
+        logfile.write(f"Initial Board : \n\t\t| {self._game_board[0][0]} | {self._game_board[0][1]} | {self._game_board[0][2]} |")
+        logfile.write(f"\n\t\t| {self._game_board[1][0]} | {self._game_board[1][1]} | {self._game_board[1][2]} |")
+        logfile.write(f"\n\t\t| {self._game_board[2][0]} | {self._game_board[2][1]} | {self._game_board[2][2]} |\n")
+        logfile.close()
     @property
     def game_board(self):
         str1 = "\nPositions : "
@@ -36,10 +42,20 @@ class Board:
             self._game_board[row][col] = player.marker
         else:
             print("This Position is already taken select any other position")
+            logfile = open("logfile.txt","a")
+            logfile.write(f"\n--------------------Position {move.value} is already taken so lost turn")
+            logfile.close()
             
     def check_row(self,player,last_move):
         row_index = last_move.get_row()
         board_row = self._game_board[row_index]
+        logfile = open("logfile.txt","a")
+        logfile.write(f"\nChecking Row Level Game Over")
+        if board_row.count(player.marker) == 3:
+            logfile.write("\n\t\t Game Over by Row")
+        else:
+            logfile.write("\n\t\t Not Over yet")
+        logfile.close()
         return board_row.count(player.marker) == 3
     
     def check_column(self, player, last_move):
@@ -48,6 +64,13 @@ class Board:
         for i in range(3):
             if self._game_board[i][column_index] == player.marker:
                 marker_counter += 1
+        logfile = open("logfile.txt","a")
+        logfile.write(f"\nChecking Column Level Game Over")
+        if marker_counter == 3:
+            logfile.write("\n\t\t Game Over by Column")
+        else:
+            logfile.write("\n\t\t Not Over yet")
+        logfile.close()
         return marker_counter == 3 
     
     def check_diagonal(self,player):
@@ -55,6 +78,13 @@ class Board:
         for i in range(3):
             if self._game_board[i][i] == player.marker:
                 counter += 1
+        logfile = open("logfile.txt","a")
+        logfile.write(f"\nChecking Diagonal Level Game Over")
+        if counter == 3:
+            logfile.write("\n\t\t Game Over by Diagonal")
+        else:
+            logfile.write("\n\t\t Not Over yet")
+        logfile.close()
         return counter == 3
     
     def check_anti_diagonal(self,player):
@@ -62,6 +92,13 @@ class Board:
         for i in range(3):
             if self._game_board[i][2-i] == player.marker:
                 counter += 1
+        logfile = open("logfile.txt","a")
+        logfile.write(f"\nChecking Cross Diagonal Level Game Over")
+        if counter == 3:
+            logfile.write("\n\t\t Game Over by Cross Diagonal")
+        else:
+            logfile.write("\n\t\t Not Over yet")
+        logfile.close()
         return counter == 3
     
     def check_is_game_over(self,player, last_move):
@@ -71,6 +108,12 @@ class Board:
         empty_counter = 0
         for row in self._game_board:
             empty_counter =+ row.count(Board.EMPTY_CELL)
+        logfile = open("logfile.txt","a")
+        if empty_counter > 0:
+            logfile.write("\n\t\t Not a Tie still Running")
+        else:
+            logfile.write("\n\t\t Game in Tie state")
+        logfile.close()
         return empty_counter == 0
     
     def reset_board(self):

@@ -1,9 +1,11 @@
-from node import Node
+from datetime import datetime
+from linkedlist import LinkedList
 
-
-node_d = Node("d",None)
-node_c = Node("c",node_d)
-node_b = Node("b",node_c)
-node_a = Node("a",node_b)
-
-print(node_a)
+ll1 = LinkedList()
+start_time = datetime.now()
+for i in range(100):
+    ll1.insert(90+i)
+print(len(ll1))
+print(ll1)
+end_time = datetime.now()
+print(f"Program completed in {end_time - start_time}")

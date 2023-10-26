@@ -21,8 +21,6 @@ class Node:
     def next_node(self, new_next_node):
         self._next_node = new_next_node
 
-    def __str__(self):
-        return f"{self._value} -->  {self._next_node}"
-
+    
         
     

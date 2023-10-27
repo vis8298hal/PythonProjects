@@ -1,5 +1,14 @@
 class Node:
-    
+    """Container of Data Value and Data Connection
+    Attributes:
+        * value         ==> Value of element.
+        * next_node     ==> Reference to the next node.
+
+    Syntax:
+        Node(data,next_node) ==> next_node == Node(alpha,beta)
+                                by default next_node is None
+            data is the value to be stored into node.
+    """
     
     def __init__(self,data, next_node=None):
         self._value = data

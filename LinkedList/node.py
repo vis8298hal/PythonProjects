@@ -1,8 +1,10 @@
+from log import Log
 class Node:
     """Container of Data Value and Data Connection
     Attributes:
         * value         ==> Value of element.
         * next_node     ==> Reference to the next node.
+        * logfile       ==> Logfile name for the Program.
 
     Syntax:
         Node(data,next_node) ==> next_node == Node(alpha,beta)
@@ -13,6 +15,7 @@ class Node:
     def __init__(self,data, next_node=None):
         self._value = data
         self._next_node = next_node
+        self.__logfile = "logfile.txt"
     
     @property
     def value(self):
@@ -29,6 +32,7 @@ class Node:
     @next_node.setter
     def next_node(self, new_next_node):
         self._next_node = new_next_node
+        log = Log(self.__logfile)
 
     
         

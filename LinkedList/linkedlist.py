@@ -47,7 +47,7 @@ class LinkedList:
             while (runner_node is not None) and (value > runner_node.value):
                 prev_node = runner_node
                 runner_node = runner_node.next_node
-                log.write_msg(f"Inserted {value}",3)
+            log.write_msg(f"Inserted {value}",3)
             self.tail = runner_node
             new_node.next_node = runner_node
             prev_node.next_node = new_node
@@ -97,10 +97,10 @@ class LinkedList:
             
             while (runner is not None) and (target > runner.value):
                 log.write_msg("No Match ! Looking for another one ",3)
-                previous = runner
+                prev = runner
                 runner = runner.next_node
             if (runner is not None) and (runner.value == target):
-                previous.next_node = runner.next_node
+                prev.next_node = runner.next_node
                 log.write_msg(f"Match found deleted node {target}",4)
                 return True
             else:

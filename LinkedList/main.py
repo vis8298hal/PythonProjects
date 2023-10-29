@@ -20,7 +20,7 @@ class App:
         print("Please Choose from below Options")
         str1 = "Insert"
         int1 = 1
-        print("{:<5}{:<20}{:<5}{:<20}".format(1,"Insert",2,"Update"))
+        print("{:<5}{:<20}{:<5}{:<20}".format(1,"Insert",2,"Show Log"))
         print("{:<5}{:<20}{:<5}{:<20}".format(3,"Delete",4,"Truncate"))
         print("{:<5}{:<20}{:<5}{:<20}".format(5,"Find Value",6,"Show the List"))
         print("{:<5}{:<20}".format(9,"Exit the Program"))
@@ -36,7 +36,7 @@ class App:
             print("================================================================================================")
             exit(0)
         elif action == 2:
-            self.update_list()
+            self.show_log()
         elif action == 3:
             self.delete_list()
         elif action == 4:
@@ -61,8 +61,23 @@ class App:
         if res:
             return self.insert_into(list1)
     
+    def show_log(self):
+        logfile = open(self._filename,"r")
+        print("=============================================================================================")
+        print("{:<30}{}{:>40}".format("","Logfile Starts Here",""))
+        print("=============================================================================================")
+        print(logfile.read())
+        print("=============================================================================================")
+        print("{:<30}{}{:>40}".format("","End of the Logfile",""))
+        print("=============================================================================================")
+        self.show_menu()
+
+
+
+
     def update_list(self):
         print("This feature is not available right now we are working on it")
+        self.show_menu()
     def delete_list(self):
         user_inp = int(input("Enter Value to be deleted : "))
         if self._ll1.delete_node(user_inp):
@@ -70,11 +85,20 @@ class App:
             print("{:<20}{:<2}{:<20}".format("",user_inp,"Deleted Successfully"))
             print("=========================================================")
             self.show_menu()
+        else:
+            print("Value Entered is not Present in list or list is empty.")
+            print("Please check log for more details.")
+            self.show_menu()
     def truncate_list(self):
         self._ll1.head = None
         self.show_list()
     def find_val(self):
-        pass
+        user_inp = int(input("Enter the Value to find : "))
+        if self._ll1.find_node(user_inp):
+            print("{:<2}{}{:>2}".format("====================The value ",user_inp," found in Linked List===================="))
+        else:
+            print("================== Value Not Found =====================")
+        self.show_menu()
     def show_list(self):
         print("{:<2}{}{:>2}".format("================","The List is ","=============="))
         print(self._ll1)
